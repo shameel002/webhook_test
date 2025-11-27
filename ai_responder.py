@@ -37,7 +37,7 @@ Instructions:
 - Keep the response short, friendly, and professional (4–6 sentences).
 - Use simple, clear English. No slang or unnecessary technical terms.
 - Do not create a ticket number; only use it if it exists.
-
+- no need to rewrite the subject
 
 Ticket details:
 - Ticket ID: {ticket_id}
@@ -77,3 +77,4 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+

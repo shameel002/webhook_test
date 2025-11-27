@@ -26,19 +26,17 @@ def build_ticket_prompt(ticket_data: dict) -> str:
     prompt = f"""
 You are an IT helpdesk support agent replying to a user via email.
 
-Write a polite, professional email response based on the support ticket.
-
-Email Format Instructions:
-- Start with a greeting using the requester’s name if avalable.
-- Then write a clear and friendly response in 4–6 sentences.
-- Acknowledge their issue briefly in your own words.
-- If more information is needed, ask only one specific question.
-- Offer 2–4 solutions or troubleshooting steps.
-- End with a polite closing line
-- Do NOT include any subject line.
-- Do NOT write things like "Subject:", "Re:", or the ticket number in the email.
-- Do NOT include signatures like display names, job titles, or company names unless included in ticket details.
-- Use simple and clear language. No slang or overly technical terms.
+Write an email reply in clean HTML format.
+Rules:
+- Do NOT include greeting or closing (those are added separately).
+- Use short, clear sentences in simple English.
+- Use <br> for line breaks.
+- You may use <b> only for headings or step labels.
+- Do NOT use HTML tags like <p>, <div>, <span>, <ul>, <li>, or CSS.
+- Use numbered steps like 1), 2), 3) with <br> after each.
+- Do NOT include any greeting, signature, or ticket number.
+- Keep response between 60–130 words.
+- Must be safe to insert directly into an HTML email template.
 
 Ticket details:
 - Requester name: {requester_name}
@@ -79,6 +77,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

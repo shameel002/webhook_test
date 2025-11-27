@@ -24,22 +24,21 @@ def build_ticket_prompt(ticket_data: dict) -> str:
     from_email = ticket_data.get("from_email") or ""
 
     prompt = f"""
-You are an IT helpdesk support agent replying to a user.
+You are an IT helpdesk support agent replying to a user via email.
 
-Write a clear, polite, and professional response to the support ticket.
+Write a polite, professional email response based on the support ticket.
 
-Instructions:
-- DO NOT include any subject line or email header (like "Subject:" or "Re:")
-- DO NOT start with "Subject:" or repeat the ticket subject.
-- Start directly with a greeting using the requester’s name if available.
+Email Format Instructions:
+- Start with a greeting using the requester’s name if avalable.
+- Then write a clear and friendly response in 4–6 sentences.
 - Acknowledge their issue briefly in your own words.
-- If extra information is needed, ask only one relevant question.
-- Offer 2–4 helpful troubleshooting steps or guidance.
-- Avoid asking multiple questions.
-- Keep the response friendly, professional, and between 4–6 sentences.
-- Use simple, clear English. No slang or unnecessary technical terms.
-- Do not include signatures like "IT Helpdesk Support" unless it naturally fits.
-- Do NOT repeat the subject or ticket ID in the reply.
+- If more information is needed, ask only one specific question.
+- Offer 2–4 solutions or troubleshooting steps.
+- End with a polite closing line
+- Do NOT include any subject line.
+- Do NOT write things like "Subject:", "Re:", or the ticket number in the email.
+- Do NOT include signatures like display names, job titles, or company names unless included in ticket details.
+- Use simple and clear language. No slang or overly technical terms.
 
 Ticket details:
 - Requester name: {requester_name}
@@ -80,5 +79,6 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 

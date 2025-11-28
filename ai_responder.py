@@ -39,7 +39,7 @@ Formatting Rules (very important):
 - You may use <b> only for headings or emphasis.
 - Do NOT use <p>, <div>, <span>, bullet points, hyphens, or extra HTML tags.
 - Use numbered steps like 1), 2), 3) with <br> after each.
-- Do NOT ask more than one question.
+- Do NOT ask ay question only provide clear  instructios on what to do now.
 - Keep response between 70–130 words.
 - Must be safe to directly insert into an HTML email template.
 - Must look visually organized even if copied as plain text.
@@ -83,6 +83,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

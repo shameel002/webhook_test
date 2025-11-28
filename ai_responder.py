@@ -38,8 +38,9 @@ Formatting Rules (very important):
     • Before the final sentence (closing support line).
 - You may use <b> only for headings or emphasis.
 - Do NOT use <p>, <div>, <span>, bullet points, hyphens, or extra HTML tags.
-- Use numbered steps like 1), 2), 3) with <br> after each.
-- Do NOT ask ay question only provide clear  instructios on what to do now.
+- Use numbered steps like 1), 2), 3),4),5) with <br> after each.
+- DO NOT ask to open new ticket, tell politely to close the ticket if the issue is resolved
+- Do NOT ask any question only provide clear instructios on what to do now.
 - Keep response between 70–130 words.
 - Must be safe to directly insert into an HTML email template.
 - Must look visually organized even if copied as plain text.
@@ -83,6 +84,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

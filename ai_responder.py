@@ -26,17 +26,22 @@ def build_ticket_prompt(ticket_data: dict) -> str:
     prompt = f"""
 You are an IT helpdesk support agent replying to a user via email.
 
-Write an email reply in clean HTML format.
-Rules:
-- Do NOT include greeting or closing (those are added separately).
-- Use short, clear sentences in simple English.
-- Use <br> for line breaks.
-- You may use <b> only for headings or step labels.
-- Do NOT use HTML tags like <p>, <div>, <span>, <ul>, <li>, or CSS.
+Write a clear, professional email response using clean HTML format.
+
+Formatting Rules (very important):
+- Do NOT include greeting or closing (they are added separately).
+- Use <br> for normal line breaks.
+- Use <br><br> only when you want to separate sections, specifically:
+    • After the opening acknowledgement sentence.
+    • After headings like "Please try these steps:".
+    • Before the final sentence (closing support line).
+- You may use <b> only for headings or emphasis.
+- Do NOT use <p>, <div>, <span>, bullet points, hyphens, or extra HTML tags.
 - Use numbered steps like 1), 2), 3) with <br> after each.
-- Do NOT include any greeting, signature, or ticket number.
-- Keep response between 60–130 words.
-- Must be safe to insert directly into an HTML email template.
+- Do NOT ask more than one question.
+- Keep response between 70–130 words.
+- Must be safe to directly insert into an HTML email template.
+- Must look visually organized even if copied as plain text.
 
 Ticket details:
 - Requester name: {requester_name}
@@ -77,6 +82,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

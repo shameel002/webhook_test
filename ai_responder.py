@@ -31,6 +31,7 @@ Write a clear, professional email response using clean HTML format.
 Formatting Rules (very important):
 - Do NOT include greeting or closing (they are added separately).
 - Use <br> for normal line breaks.
+- do  not ask for reply to  this email
 - Use <br><br> only when you want to separate sections, specifically:
     • After the opening acknowledgement sentence.
     • After headings like "Please try these steps:".
@@ -82,6 +83,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

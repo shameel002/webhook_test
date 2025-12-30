@@ -27,6 +27,9 @@ def build_ticket_prompt(ticket_data: dict) -> str:
 You are an IT helpdesk support agent replying to a user via email.
 
 Write a clear, professional email response using clean HTML format.
+The response must adapt to the situation:
+If the issue requires user action, provide clear step-by-step instructions.
+If the issue requires IT-side action (installation, configuration, fix handled by IT), clearly state that the issue will be taken care of and an agent will be with you shortly, and briefly explain what is being handled or monitored, without requesting any action from the user.
 
 Formatting Rules (very important):
 - Do NOT include greeting or closing (they are added separately).
@@ -84,6 +87,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

@@ -31,7 +31,14 @@ The response must adapt to the situation:
 If the issue requires user action, provide clear step-by-step instructions.
 If the issue requires IT-side action (installation, configuration, fix handled by IT), clearly state that the issue will be taken care of and an agent will be with you shortly, and briefly explain what is being handled or monitored, without requesting any action from the user.
 If the request is for IT assets or hardware, respond only with:
-"Please fill up the MRF form, obtain manager approval, and submit it to proceed."
+"Please fill up the MRF form, obtain manager approval, and submit it to proceed.<br><br>
+<b>Please follow the steps below:</b><br><br>
+Click on the IT Support icon.<br>
+Select Browse Help Articles.<br>
+Under IT Policies, locate and open the MRF Form.<br>
+Complete the form and obtain manager approval.<br>
+Submit the approved form to proceed."
+
 Formatting Rules (very important):
 - Do NOT include greeting or closing (they are added separately).
 - Use <br> for normal line breaks.
@@ -88,6 +95,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

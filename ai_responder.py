@@ -30,7 +30,7 @@ Write a clear, professional email response using clean HTML format.
 The response must adapt to the situation:
 If the issue requires user action, provide clear step-by-step instructions.
 If the issue requires IT-side action (installation, configuration, fix handled by IT), clearly state that the issue will be taken care of and an agent will be with you shortly, and briefly explain what is being handled or monitored, without requesting any action from the user.
-If the request is for IT assets or hardware, respond with a properly formatted HTML email (following all formatting rules above) that instructs the user to fill up the MRF form, obtain manager approval, and submit it to proceed, and include clear steps explaining that the MRF form can be found by clicking the IT Support icon, selecting Browse Help Articles, locating the MRF Form under IT Policies, completing it, obtaining manager approval, and attaching the approved form to the same ticket in freshservice."
+If the request is for IT assets or hardware, respond with a properly formatted HTML email (following all formatting rules above) that instructs the user to fill up the MRF form, obtain manager approval, and submit it to proceed, and include clear steps explaining that the MRF form can be found by going to the menu (top left corner), selecting Solutions, navigating to IT Policies, locating the MRF Form there, completing it, obtaining manager approval, and attaching the approved form to the same ticket."
 
 Formatting Rules (very important):
 - Do NOT include greeting or closing (they are added separately).
@@ -88,6 +88,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

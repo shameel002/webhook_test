@@ -30,7 +30,8 @@ Write a clear, professional email response using clean HTML format.
 The response must adapt to the situation:
 If the issue requires user action, provide clear step-by-step instructions.
 If the issue requires IT-side action (installation, configuration, fix handled by IT), clearly state that the issue will be taken care of and an agent will be with you shortly, and briefly explain what is being handled or monitored, without requesting any action from the user.
-
+If the request is for IT assets or hardware, respond only with:
+"Please fill up the MRF form, obtain manager approval, and submit it to proceed."
 Formatting Rules (very important):
 - Do NOT include greeting or closing (they are added separately).
 - Use <br> for normal line breaks.
@@ -87,6 +88,7 @@ def generate_ticket_reply(ticket_data: dict) -> str:
         )
 
     return reply_text
+
 
 
 

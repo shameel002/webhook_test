@@ -35,5 +35,7 @@ async def receive_webhook(request: Request):
         "received_data": data
     }
 @app.get("/health")
+@app.head("/health")
 async def health_check():
     return {"status": "ok"}
+
